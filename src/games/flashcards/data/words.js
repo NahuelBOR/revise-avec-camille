@@ -85,6 +85,24 @@ export const categories = [
     "label": "Les accessoires",
     "icon": "👜",
     "color": "mint"
+  },
+  {
+    "id": "la-tete",
+    "label": "La tête",
+    "icon": "🗣️",
+    "color": "sky"
+  },
+  {
+    "id": "le-haut-du-corps",
+    "label": "Le haut du corps",
+    "icon": "💪",
+    "color": "peach"
+  },
+  {
+    "id": "le-bas-du-corps",
+    "label": "Le bas du corps",
+    "icon": "🦵",
+    "color": "mint"
   }
 ]
 
@@ -96,6 +114,13 @@ export const groups = [
     icon: '🏠',
     color: 'sky',
     subcategories: ['chambre', 'cuisine', 'jardin', 'logement', 'pieces', 'salon', 'salle-de-bains'],
+  },
+  {
+    id: 'le-corps',
+    label: 'Le corps',
+    icon: '👤',
+    color: 'mint',
+    subcategories: ['la-tete', 'le-haut-du-corps', 'le-bas-du-corps'],
   },
   {
     id: 'couleurs',
@@ -1427,5 +1452,209 @@ export const words = [
     fr: ['La banane'],
     ar: ['La riñonera'],
     es: ['La riñonera'],
+  },
+
+  // LE CORPS - LA TÊTE
+  {
+    category: 'la-tete',
+    fr: ['Les yeux'],
+    ar: ['Los ojos'],
+    es: ['Los ojos'],
+  },
+  {
+    category: 'la-tete',
+    fr: ['L’œil'],
+    ar: ['El ojo'],
+    es: ['El ojo'],
+  },
+  {
+    category: 'la-tete',
+    fr: ['Le nez'],
+    ar: ['La nariz'],
+    es: ['La nariz'],
+  },
+  {
+    category: 'la-tete',
+    fr: ['La bouche'],
+    ar: ['La boca'],
+    es: ['La boca'],
+  },
+  {
+    category: 'la-tete',
+    fr: ['L’oreille'],
+    ar: ['La oreja'],
+    es: ['La oreja'],
+  },
+  {
+    category: 'la-tete',
+    fr: ['Les cheveux'],
+    ar: ['El pelo'],
+    es: ['El pelo'],
+  },
+  {
+    category: 'la-tete',
+    fr: ['Les sourcils'],
+    ar: ['Las cejas'],
+    es: ['Las cejas'],
+  },
+  {
+    category: 'la-tete',
+    fr: ['Les cils'],
+    ar: ['Las pestañas'],
+    es: ['Las pestañas'],
+  },
+  {
+    category: 'la-tete',
+    fr: ['Le front'],
+    ar: ['La frente'],
+    es: ['La frente'],
+  },
+  {
+    category: 'la-tete',
+    fr: ['Les joues'],
+    ar: ['Las mejillas'],
+    es: ['Las mejillas'],
+  },
+  {
+    category: 'la-tete',
+    fr: ['Le menton'],
+    ar: ['La pera'],
+    es: ['La barbilla'],
+  },
+
+  // LE CORPS - LE HAUT DU CORPS
+  {
+    category: 'le-haut-du-corps',
+    fr: ['Le cou'],
+    ar: ['El cuello'],
+    es: ['El cuello'],
+  },
+  {
+    category: 'le-haut-du-corps',
+    fr: ['Les épaules'],
+    ar: ['Los hombros'],
+    es: ['Los hombros'],
+  },
+  {
+    category: 'le-haut-du-corps',
+    fr: ['Le bras'],
+    ar: ['El brazo'],
+    es: ['El brazo'],
+  },
+  {
+    category: 'le-haut-du-corps',
+    fr: ['Le coude'],
+    ar: ['El codo'],
+    es: ['El codo'],
+  },
+  {
+    category: 'le-haut-du-corps',
+    fr: ['Le poignet'],
+    ar: ['La muñeca'],
+    es: ['La muñeca'],
+  },
+  {
+    category: 'le-haut-du-corps',
+    fr: ['La main'],
+    ar: ['La mano'],
+    es: ['La mano'],
+  },
+  {
+    category: 'le-haut-du-corps',
+    fr: ['Les doigts'],
+    ar: ['Los dedos'],
+    es: ['Los dedos'],
+  },
+  {
+    category: 'le-haut-du-corps',
+    fr: ['La poitrine'],
+    ar: ['El pecho'],
+    es: ['El pecho'],
+  },
+  {
+    category: 'le-haut-du-corps',
+    fr: ['Les seins'],
+    ar: ['Los senos'],
+    es: ['Los senos'],
+  },
+  {
+    category: 'le-haut-du-corps',
+    fr: ['Le dos'],
+    ar: ['La espalda'],
+    es: ['La espalda'],
+  },
+  {
+    category: 'le-haut-du-corps',
+    fr: ['Le ventre'],
+    ar: ['La panza'],
+    es: ['La barriga'],
+  },
+  {
+    category: 'le-haut-du-corps',
+    fr: ['Le nombril'],
+    ar: ['El ombligo'],
+    es: ['El ombligo'],
+  },
+  {
+    category: 'le-haut-du-corps',
+    fr: ['La taille'],
+    ar: ['La cintura'],
+    es: ['La cintura'],
+  },
+
+  // LE CORPS - LE BAS DU CORPS
+  {
+    category: 'le-bas-du-corps',
+    fr: ['Les hanches'],
+    ar: ['Las caderas'],
+    es: ['Las caderas'],
+  },
+  {
+    category: 'le-bas-du-corps',
+    fr: ['Les fesses'],
+    ar: ['Las nalgas'],
+    es: ['Los glúteos'],
+  },
+  {
+    category: 'le-bas-du-corps',
+    fr: ['La jambe'],
+    ar: ['La pierna'],
+    es: ['La pierna'],
+  },
+  {
+    category: 'le-bas-du-corps',
+    fr: ['La cuisse'],
+    ar: ['El muslo'],
+    es: ['El muslo'],
+  },
+  {
+    category: 'le-bas-du-corps',
+    fr: ['Le genou'],
+    ar: ['La rodilla'],
+    es: ['La rodilla'],
+  },
+  {
+    category: 'le-bas-du-corps',
+    fr: ['Le mollet'],
+    ar: ['La pantorrilla'],
+    es: ['La pantorrilla'],
+  },
+  {
+    category: 'le-bas-du-corps',
+    fr: ['La cheville'],
+    ar: ['El tobillo'],
+    es: ['El tobillo'],
+  },
+  {
+    category: 'le-bas-du-corps',
+    fr: ['Le pied'],
+    ar: ['El pie'],
+    es: ['El pie'],
+  },
+  {
+    category: 'le-bas-du-corps',
+    fr: ['Les orteils / Les doigts de pied'],
+    ar: ['Los dedos de los pies'],
+    es: ['Los dedos de los pies'],
   },
 ]

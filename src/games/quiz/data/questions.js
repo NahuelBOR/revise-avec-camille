@@ -11,8 +11,28 @@ export const categories = [
       { id: 'salon', label: 'Le salon', icon: '🛋️' },
     ]
   },
+  {
+    id: 'le-corps', label: 'Le corps', icon: '👤', color: 'mint', subcategories: [
+      { id: 'la-tete', label: 'La tête', icon: '🗣️' },
+      { id: 'le-haut-du-corps', label: 'Le haut du corps', icon: '💪' },
+      { id: 'le-bas-du-corps', label: 'Le bas du corps', icon: '🦵' },
+    ]
+  },
   { id: 'restaurant', label: 'Au restaurant', icon: '🍽️', color: 'peach', subcategories: [{ id: 'restaurant-general', label: 'Au restaurant', icon: '🍷' }] },
-  { id: 'vetements', label: 'Les vêtements', icon: '👗', color: 'mint', subcategories: [{ id: 'vetements-general', label: 'Les vêtements', icon: '👕' }] },
+  {
+    id: 'vetements',
+    label: 'Les vêtements',
+    icon: '👗',
+    color: 'mint',
+    subcategories: [
+      { id: 'ete', label: 'L’été', icon: '☀️' },
+      { id: 'mi-saison', label: 'La mi-saison', icon: '🍂' },
+      { id: 'hiver', label: 'L’hiver', icon: '❄️' },
+      { id: 'sous-vetements', label: 'Les sous-vêtements', icon: '🩲' },
+      { id: 'chaussures', label: 'Les chaussures', icon: '👟' },
+      { id: 'accessoires', label: 'Les accessoires', icon: '👜' },
+    ]
+  },
   { id: 'description-physique', label: 'La description physique', icon: '👤', color: 'sky', subcategories: [{ id: 'description-general', label: 'La description physique', icon: '👀' }] },
   { id: 'couleurs', label: 'Les couleurs', icon: '🎨', color: 'peach', subcategories: [{ id: 'couleurs-general', label: 'Les couleurs', icon: '🌈' }] },
   { id: 'famille', label: 'La famille', icon: '👨‍👩‍👧‍👦', color: 'mint', subcategories: [{ id: 'famille-general', label: 'La famille', icon: '👪' }] },
@@ -188,4 +208,104 @@ export const questions = [
   { id: 'ordinateur', category: 'maison', subcategory: 'chambre', image: '/images/maison/chambre/compu.jfif', alt: 'L’ordinateur', correctAnswer: 'L’ordinateur (masc. : un ordinateur)', options: ['L’ordinateur (masc. : un ordinateur)', 'La télé', 'Le projecteur', 'Le bureau'] },
   { id: 'chaise-chambre', category: 'maison', subcategory: 'chambre', image: '/images/maison/chambre/silla_esc.jpeg', alt: 'La chaise', correctAnswer: 'La chaise', options: ['La chaise', 'Le fauteuil', 'Le bureau', 'Le lit'] },
   { id: 'miroir-chambre', category: 'maison', subcategory: 'chambre', image: '/images/maison/chambre/espejo.jpeg', alt: 'Le miroir', correctAnswer: 'Le miroir', options: ['Le miroir', 'Les cadres (masc.:un cadre)', 'La fenêtre', 'La porte'] },
+
+  // LE CORPS - LA TÊTE
+  { id: 'les-yeux', category: 'le-corps', subcategory: 'la-tete', image: '/images/Le corps/La tête/les yeux.jpg', alt: 'Les yeux', correctAnswer: 'Les yeux', options: ['Les yeux', "L'œil", 'Les sourcils', 'Les cils'] },
+  { id: 'l-oeil', category: 'le-corps', subcategory: 'la-tete', image: '/images/Le corps/La tête/ojo.jpg', alt: "L'œil", correctAnswer: "L'œil", options: ["L'œil", 'Les yeux', 'Le nez', "L'oreille"] },
+  { id: 'le-nez', category: 'le-corps', subcategory: 'la-tete', image: '/images/Le corps/La tête/nariz.jpeg', alt: 'Le nez', correctAnswer: 'Le nez', options: ['Le nez', 'La bouche', 'Le menton', 'Le front'] },
+  { id: 'la-bouche', category: 'le-corps', subcategory: 'la-tete', image: '/images/Le corps/La tête/dientes.jpg', alt: 'La bouche', correctAnswer: 'La bouche', options: ['La bouche', 'Le nez', 'Les joues', 'Le menton'] },
+  { id: 'l-oreille', category: 'le-corps', subcategory: 'la-tete', image: '/images/Le corps/La tête/oreja.webp', alt: "L'oreille", correctAnswer: "L'oreille", options: ["L'oreille", 'Le nez', 'Les cheveux', 'Le cou'] },
+  { id: 'les-cheveux', category: 'le-corps', subcategory: 'la-tete', image: '/images/Le corps/La tête/pelo.jfif', alt: 'Les cheveux', correctAnswer: 'Les cheveux', options: ['Les cheveux', 'Les sourcils', 'Les cils', 'Le front'] },
+  { id: 'les-sourcils', category: 'le-corps', subcategory: 'la-tete', image: '/images/Le corps/La tête/ceja.webp', alt: 'Les sourcils', correctAnswer: 'Les sourcils', options: ['Les sourcils', 'Les cils', 'Les yeux', 'Le front'] },
+  { id: 'les-cils', category: 'le-corps', subcategory: 'la-tete', image: '/images/Le corps/La tête/pestaña.jpg', alt: 'Les cils', correctAnswer: 'Les cils', options: ['Les cils', 'Les sourcils', 'Les yeux', 'Les joues'] },
+  { id: 'le-front', category: 'le-corps', subcategory: 'la-tete', image: '/images/Le corps/La tête/frente.jfif', alt: 'Le front', correctAnswer: 'Le front', options: ['Le front', 'Le menton', 'Les joues', 'Le nez'] },
+  { id: 'les-joues', category: 'le-corps', subcategory: 'la-tete', image: '/images/Le corps/La tête/cachete.jfif', alt: 'Les joues', correctAnswer: 'Les joues', options: ['Les joues', 'Le menton', 'Le nez', 'La bouche'] },
+  { id: 'le-menton', category: 'le-corps', subcategory: 'la-tete', image: '/images/Le corps/La tête/pera.jpg', alt: 'Le menton', correctAnswer: 'Le menton', options: ['Le menton', 'Le front', 'Les joues', 'Le cou'] },
+
+  // LE CORPS - LE HAUT DU CORPS
+  { id: 'le-cou', category: 'le-corps', subcategory: 'le-haut-du-corps', image: '/images/Le corps/Le haut du corps/cou.jfif', alt: 'Le cou', correctAnswer: 'Le cou', options: ['Le cou', 'Les épaules', 'Le bras', 'La poitrine'] },
+  { id: 'les-epaules', category: 'le-corps', subcategory: 'le-haut-du-corps', image: "/images/Le corps/Le haut du corps/Douleur à l'épaule.jpg", alt: 'Les épaules', correctAnswer: 'Les épaules', options: ['Les épaules', 'Le cou', 'Le bras', 'Le dos'] },
+  { id: 'le-bras', category: 'le-corps', subcategory: 'le-haut-du-corps', image: '/images/Le corps/Le haut du corps/bras.jpg', alt: 'Le bras', correctAnswer: 'Le bras', options: ['Le bras', 'Le coude', 'Le poignet', 'La main'] },
+  { id: 'le-coude', category: 'le-corps', subcategory: 'le-haut-du-corps', image: '/images/Le corps/Le haut du corps/coude.webp', alt: 'Le coude', correctAnswer: 'Le coude', options: ['Le coude', 'Le poignet', 'Le bras', 'Les épaules'] },
+  { id: 'le-poignet', category: 'le-corps', subcategory: 'le-haut-du-corps', image: '/images/Le corps/Le haut du corps/poignet.jpeg', alt: 'Le poignet', correctAnswer: 'Le poignet', options: ['Le poignet', 'La main', 'Le coude', 'Les doigts'] },
+  { id: 'la-main', category: 'le-corps', subcategory: 'le-haut-du-corps', image: '/images/Le corps/Le haut du corps/Human-Hands-Back-Front.jpg', alt: 'La main', correctAnswer: 'La main', options: ['La main', 'Les doigts', 'Le poignet', 'Le bras'] },
+  { id: 'les-doigts', category: 'le-corps', subcategory: 'le-haut-du-corps', image: '/images/Le corps/Le haut du corps/doigts.webp', alt: 'Les doigts', correctAnswer: 'Les doigts', options: ['Les doigts', 'La main', 'Les orteils', 'Le poignet'] },
+  { id: 'la-poitrine', category: 'le-corps', subcategory: 'le-haut-du-corps', image: '/images/Le corps/Le haut du corps/poitrine.jpg', alt: 'La poitrine', correctAnswer: 'La poitrine', options: ['La poitrine', 'Les seins', 'Le ventre', 'Le dos'] },
+  { id: 'les-seins', category: 'le-corps', subcategory: 'le-haut-du-corps', image: '/images/Le corps/Le haut du corps/lesw seins.jpg', alt: 'Les seins', correctAnswer: 'Les seins', options: ['Les seins', 'La poitrine', 'Le ventre', 'La taille'] },
+  { id: 'le-dos', category: 'le-corps', subcategory: 'le-haut-du-corps', image: '/images/Le corps/Le haut du corps/dos.jpg', alt: 'Le dos', correctAnswer: 'Le dos', options: ['Le dos', 'Le ventre', 'La taille', 'Les épaules'] },
+  { id: 'le-ventre', category: 'le-corps', subcategory: 'le-haut-du-corps', image: '/images/Le corps/Le haut du corps/panza.jpg', alt: 'Le ventre', correctAnswer: 'Le ventre', options: ['Le ventre', 'La taille', 'La poitrine', 'Le dos'] },
+  { id: 'la-taille', category: 'le-corps', subcategory: 'le-haut-du-corps', image: '/images/Le corps/Le haut du corps/taille.jpg', alt: 'La taille', correctAnswer: 'La taille', options: ['La taille', 'Le ventre', 'Les hanches', 'Le dos'] },
+
+  // LE CORPS - LE BAS DU CORPS
+  { id: 'les-hanches', category: 'le-corps', subcategory: 'le-bas-du-corps', image: '/images/Le corps/Le bas du corps/caderas.webp', alt: 'Les hanches', correctAnswer: 'Les hanches', options: ['Les hanches', 'La taille', 'Les fesses', 'La cuisse'] },
+  { id: 'les-fesses', category: 'le-corps', subcategory: 'le-bas-du-corps', image: '/images/Le corps/Le bas du corps/fesses.jfif', alt: 'Les fesses', correctAnswer: 'Les fesses', options: ['Les fesses', 'Les hanches', 'La cuisse', 'Le dos'] },
+  { id: 'les-jambes', category: 'le-corps', subcategory: 'le-bas-du-corps', image: '/images/Le corps/Le bas du corps/piernas-torneadas.jpg', alt: 'Les jambes', correctAnswer: 'Les jambes (fém.: une jambe)', options: ['Les jambes (fém.: une jambe)', 'La cuisse', 'Les pieds (masc.: un pied)', 'Le genou'] },
+  { id: 'la-cuisse', category: 'le-corps', subcategory: 'le-bas-du-corps', image: '/images/Le corps/Le bas du corps/cuisse.jpg', alt: 'La cuisse', correctAnswer: 'La cuisse', options: ['La cuisse', 'Le genou', 'Le mollet', 'La cheville'] },
+  { id: 'le-genou', category: 'le-corps', subcategory: 'le-bas-du-corps', image: '/images/Le corps/Le bas du corps/genou.jpg', alt: 'Le genou', correctAnswer: 'Le genou', options: ['Le genou', 'La cheville', 'Le mollet', 'La cuisse'] },
+  { id: 'le-mollet', category: 'le-corps', subcategory: 'le-bas-du-corps', image: '/images/Le corps/Le bas du corps/molet.jpg', alt: 'Le mollet', correctAnswer: 'Le mollet', options: ['Le mollet', 'La cheville', 'Le genou', 'La cuisse'] },
+  { id: 'la-cheville', category: 'le-corps', subcategory: 'le-bas-du-corps', image: '/images/Le corps/Le bas du corps/cheville.webp', alt: 'La cheville', correctAnswer: 'La cheville', options: ['La cheville', 'Les pieds (masc.: un pied)', 'Le genou', 'Le mollet'] },
+  { id: 'les-pieds', category: 'le-corps', subcategory: 'le-bas-du-corps', image: '/images/Le corps/Le bas du corps/pieds.jpg', alt: 'Les pieds', correctAnswer: 'Les pieds (masc.: un pied)', options: ['Les pieds (masc.: un pied)', 'Les jambes (fém.: une jambe)', 'Les orteils / Les doigts de pieds', 'La cheville'] },
+  { id: 'les-orteils', category: 'le-corps', subcategory: 'le-bas-du-corps', image: '/images/Le corps/Le bas du corps/doigts de pieds.jpg', alt: 'Les orteils / Les doigts de pieds', correctAnswer: 'Les orteils / Les doigts de pieds', options: ['Les orteils / Les doigts de pieds', 'Les doigts', 'Les pieds (masc.: un pied)', 'La cheville'] },
+
+  // LES VÊTEMENTS - L'ÉTÉ
+  { id: 'jupe', category: 'vetements', subcategory: 'ete', image: "/images/Vêtements/L'été/La jupe.jpeg", alt: 'La jupe', correctAnswer: 'La jupe', options: ['La jupe', 'La robe', 'Le short', 'Le T-shirt'] },
+  { id: 'robe', category: 'vetements', subcategory: 'ete', image: "/images/Vêtements/L'été/La robe.jpeg", alt: 'La robe', correctAnswer: 'La robe', options: ['La robe', 'La jupe', 'Le body', 'Le maillot de bain'] },
+  { id: 'bikini', category: 'vetements', subcategory: 'ete', image: "/images/Vêtements/L'été/Le bikini.jpeg", alt: 'Le bikini', correctAnswer: 'Le bikini', options: ['Le bikini', 'Le maillot de bain une pièce', 'Le body', 'Le short'] },
+  { id: 'body', category: 'vetements', subcategory: 'ete', image: "/images/Vêtements/L'été/Le body.jpeg", alt: 'Le body', correctAnswer: 'Le body', options: ['Le body', 'Le T-shirt', 'La robe', 'Le maillot de bain'] },
+  { id: 'maillot-deux-pieces', category: 'vetements', subcategory: 'ete', image: "/images/Vêtements/L'été/Le maillot de bain deux pièces.jpeg", alt: 'Le maillot de bain deux pièces', correctAnswer: 'Le maillot de bain deux pièces', options: ['Le maillot de bain deux pièces', 'Le maillot de bain une pièce', 'Le T-shirt', 'La robe'] },
+  { id: 'maillot-une-piece', category: 'vetements', subcategory: 'ete', image: "/images/Vêtements/L'été/Le maillot de bain une pièce.jpeg", alt: 'Le maillot de bain une pièce', correctAnswer: 'Le maillot de bain une pièce', options: ['Le maillot de bain une pièce', 'Le maillot de bain deux pièces', 'Le bikini', 'Le body'] },
+  { id: 'maillot-de-bain', category: 'vetements', subcategory: 'ete', image: "/images/Vêtements/L'été/Le maillot de bain.jpeg", alt: 'Le maillot de bain', correctAnswer: 'Le maillot de bain', options: ['Le maillot de bain', 'Le short', 'Le T-shirt', 'Le body'] },
+  { id: 'short', category: 'vetements', subcategory: 'ete', image: "/images/Vêtements/L'été/Le short.jpeg", alt: 'Le short', correctAnswer: 'Le short', options: ['Le short', 'La jupe', 'Le pantalon', 'Le maillot de bain'] },
+  { id: 't-shirt', category: 'vetements', subcategory: 'ete', image: "/images/Vêtements/L'été/Le T-shirt.jpeg", alt: 'Le T-shirt', correctAnswer: 'Le T-shirt', options: ['Le T-shirt', 'La chemise', 'Le body', 'Le gilet'] },
+
+  // LES VÊTEMENTS - LA MI-SAISON
+  { id: 'chemise', category: 'vetements', subcategory: 'mi-saison', image: '/images/Vêtements/la mi-saison/La chemise.jpeg', alt: 'La chemise', correctAnswer: 'La chemise', options: ['La chemise', 'Le T-shirt', 'Le gilet', 'Le costume'] },
+  { id: 'salopette', category: 'vetements', subcategory: 'mi-saison', image: '/images/Vêtements/la mi-saison/La salopette.jpeg', alt: 'La salopette', correctAnswer: 'La salopette', options: ['La salopette', 'Le pantalon', 'Le jean', 'Le costume'] },
+  { id: 'costume', category: 'vetements', subcategory: 'mi-saison', image: '/images/Vêtements/la mi-saison/Le costume.jpeg', alt: 'Le costume', correctAnswer: 'Le costume', options: ['Le costume', 'La chemise', 'Le pantalon', 'Le gilet'] },
+  { id: 'gilet', category: 'vetements', subcategory: 'mi-saison', image: '/images/Vêtements/la mi-saison/Le gilet.jpeg', alt: 'Le gilet', correctAnswer: 'Le gilet', options: ['Le gilet', 'La chemise', 'La veste / le blouson', 'Le T-shirt'] },
+  { id: 'jean', category: 'vetements', subcategory: 'mi-saison', image: '/images/Vêtements/la mi-saison/Le jean.jpeg', alt: 'Le jean', correctAnswer: 'Le jean', options: ['Le jean', 'Le pantalon', 'Le legging', 'La salopette'] },
+  { id: 'legging', category: 'vetements', subcategory: 'mi-saison', image: '/images/Vêtements/la mi-saison/Le legging.jpeg', alt: 'Le legging', correctAnswer: 'Le legging', options: ['Le legging', 'Les collants', 'Le pantalon', 'Le jean'] },
+  { id: 'pantalon', category: 'vetements', subcategory: 'mi-saison', image: '/images/Vêtements/la mi-saison/Le pantalon.jpeg', alt: 'Le pantalon', correctAnswer: 'Le pantalon', options: ['Le pantalon', 'Le jean', 'Le short', 'Le legging'] },
+  { id: 'chaussettes', category: 'vetements', subcategory: 'mi-saison', image: '/images/Vêtements/la mi-saison/Les chaussettes.jpeg', alt: 'Les chaussettes', correctAnswer: 'Les chaussettes', options: ['Les chaussettes', 'Les collants', 'Les chaussons', 'Les baskets'] },
+  { id: 'collants', category: 'vetements', subcategory: 'mi-saison', image: '/images/Vêtements/la mi-saison/Les collants.jpeg', alt: 'Les collants', correctAnswer: 'Les collants', options: ['Les collants', 'Les chaussettes', 'Le legging', 'La jupe'] },
+
+  // LES VÊTEMENTS - L'HIVER
+  { id: 'veste-blouson', category: 'vetements', subcategory: 'hiver', image: "/images/Vêtements/L' hiver/La veste Le blouson.jpeg", alt: 'La veste / le blouson', correctAnswer: 'La veste / le blouson', options: ['La veste / le blouson', 'Le manteau', 'Le gilet', 'L’écharpe'] },
+  { id: 'manteau', category: 'vetements', subcategory: 'hiver', image: "/images/Vêtements/L' hiver/Le manteau.jpeg", alt: 'Le manteau', correctAnswer: 'Le manteau', options: ['Le manteau', 'La veste / le blouson', 'Le gilet', 'Le costume'] },
+
+  // LES VÊTEMENTS - LES SOUS-VÊTEMENTS
+  { id: 'culotte', category: 'vetements', subcategory: 'sous-vetements', image: '/images/Vêtements/Les sous-vêtements/La culotte.jpeg', alt: 'La culotte', correctAnswer: 'La culotte', options: ['La culotte', 'Le caleçon', 'Le boxer', 'Le soutien-gorge / le soutif'] },
+  { id: 'boxer', category: 'vetements', subcategory: 'sous-vetements', image: '/images/Vêtements/Les sous-vêtements/Le boxer.jpeg', alt: 'Le boxer', correctAnswer: 'Le boxer', options: ['Le boxer', 'Le caleçon', 'La culotte', 'Le short'] },
+  { id: 'calecon', category: 'vetements', subcategory: 'sous-vetements', image: '/images/Vêtements/Les sous-vêtements/Le caleçon.jpeg', alt: 'Le caleçon', correctAnswer: 'Le caleçon', options: ['Le caleçon', 'Le boxer', 'La culotte', 'Le pantalon'] },
+  { id: 'soutien-gorge', category: 'vetements', subcategory: 'sous-vetements', image: '/images/Vêtements/Les sous-vêtements/Le soutien-gorge  le soutif.jpeg', alt: 'Le soutien-gorge / le soutif', correctAnswer: 'Le soutien-gorge / le soutif', options: ['Le soutien-gorge / le soutif', 'La culotte', 'Le maillot de bain', 'Le body'] },
+
+  // LES VÊTEMENTS - LES CHAUSSURES
+  { id: 'baskets', category: 'vetements', subcategory: 'chaussures', image: '/images/Vêtements/Les chaussures/Les baskets.jpeg', alt: 'Les baskets', correctAnswer: 'Les baskets', options: ['Les baskets', 'Les bottes (de pluie)', 'Les sandales', 'Les chaussons'] },
+  { id: 'bottes', category: 'vetements', subcategory: 'chaussures', image: '/images/Vêtements/Les chaussures/Les bottes  bottes de pluie.jpeg', alt: 'Les bottes (de pluie)', correctAnswer: 'Les bottes (de pluie)', options: ['Les bottes (de pluie)', 'Les bottines', 'Les baskets', 'Les talons'] },
+  { id: 'bottines', category: 'vetements', subcategory: 'chaussures', image: '/images/Vêtements/Les chaussures/Les bottines.jpeg', alt: 'Les bottines', correctAnswer: 'Les bottines', options: ['Les bottines', 'Les bottes (de pluie)', 'Les talons', 'Les baskets'] },
+  { id: 'chaussons', category: 'vetements', subcategory: 'chaussures', image: '/images/Vêtements/Les chaussures/Les chaussons.jpeg', alt: 'Les chaussons', correctAnswer: 'Les chaussons', options: ['Les chaussons', 'Les chaussettes', 'Les tongs', 'Les sandales'] },
+  { id: 'sandales', category: 'vetements', subcategory: 'chaussures', image: '/images/Vêtements/Les chaussures/Les sandales.jpeg', alt: 'Les sandales', correctAnswer: 'Les sandales', options: ['Les sandales', 'Les tongs', 'Les talons', 'Les baskets'] },
+  { id: 'talons', category: 'vetements', subcategory: 'chaussures', image: '/images/Vêtements/Les chaussures/Les talons.jpeg', alt: 'Les talons', correctAnswer: 'Les talons', options: ['Les talons', 'Les bottines', 'Les sandales', 'Les baskets'] },
+  { id: 'tongs', category: 'vetements', subcategory: 'chaussures', image: '/images/Vêtements/Les chaussures/Les tongs.jpeg', alt: 'Les tongs', correctAnswer: 'Les tongs', options: ['Les tongs', 'Les sandales', 'Les chaussons', 'Les baskets'] },
+
+  // LES VÊTEMENTS - LES ACCESSOIRES
+  { id: 'banane', category: 'vetements', subcategory: 'accessoires', image: '/images/Vêtements/Les accessoires/La banane.jpeg', alt: 'La banane', correctAnswer: 'La banane', options: ['La banane', 'La bandoulière', 'Le sac à dos', 'Le sac à main'] },
+  { id: 'bandouliere', category: 'vetements', subcategory: 'accessoires', image: '/images/Vêtements/Les accessoires/La bandoulière.jpeg', alt: 'La bandoulière', correctAnswer: 'La bandoulière', options: ['La bandoulière', 'La banane', 'La sacoche d’ordinateur', 'La cravate'] },
+  { id: 'casquette', category: 'vetements', subcategory: 'accessoires', image: '/images/Vêtements/Les accessoires/La casquette.jpeg', alt: 'La casquette', correctAnswer: 'La casquette', options: ['La casquette', 'Le bonnet', 'Le chapeau', 'Le béret'] },
+  { id: 'cravate', category: 'vetements', subcategory: 'accessoires', image: '/images/Vêtements/Les accessoires/La cravate.jpeg', alt: 'La cravate', correctAnswer: 'La cravate', options: ['La cravate', 'L’écharpe', 'Le collier', 'La ceinture'] },
+  { id: 'montre', category: 'vetements', subcategory: 'accessoires', image: '/images/Vêtements/Les accessoires/La montre.jpeg', alt: 'La montre', correctAnswer: 'La montre', options: ['La montre', 'Le bracelet', 'Les boucles d’oreilles', 'Le collier'] },
+  { id: 'pochette-portefeuille', category: 'vetements', subcategory: 'accessoires', image: '/images/Vêtements/Les accessoires/La pochette  Le portefeuille.jpeg', alt: 'La pochette / le portefeuille', correctAnswer: 'La pochette / le portefeuille', options: ['La pochette / le portefeuille', 'Le sac à main', 'La sacoche d’ordinateur', 'La banane'] },
+  { id: 'sacoche-ordinateur', category: 'vetements', subcategory: 'accessoires', image: '/images/Vêtements/Les accessoires/La sacoche d’ordinateur.jpeg', alt: 'La sacoche d’ordinateur', correctAnswer: 'La sacoche d’ordinateur', options: ['La sacoche d’ordinateur', 'Le sac à dos', 'La pochette / le portefeuille', 'La bandoulière'] },
+  { id: 'bonnet', category: 'vetements', subcategory: 'accessoires', image: '/images/Vêtements/Les accessoires/Le bonnet.jpeg', alt: 'Le bonnet', correctAnswer: 'Le bonnet', options: ['Le bonnet', 'Le béret', 'La casquette', 'Le chapeau'] },
+  { id: 'bracelet', category: 'vetements', subcategory: 'accessoires', image: '/images/Vêtements/Les accessoires/Le bracelet.jpeg', alt: 'Le bracelet', correctAnswer: 'Le bracelet', options: ['Le bracelet', 'La montre', 'Le collier', 'Les boucles d’oreilles'] },
+  { id: 'beret', category: 'vetements', subcategory: 'accessoires', image: '/images/Vêtements/Les accessoires/Le béret.jpeg', alt: 'Le béret', correctAnswer: 'Le béret', options: ['Le béret', 'Le chapeau', 'Le bonnet', 'La casquette'] },
+  { id: 'chapeau', category: 'vetements', subcategory: 'accessoires', image: '/images/Vêtements/Les accessoires/Le chapeau.jpeg', alt: 'Le chapeau', correctAnswer: 'Le chapeau', options: ['Le chapeau', 'Le bonnet', 'La casquette', 'Le béret'] },
+  { id: 'collier', category: 'vetements', subcategory: 'accessoires', image: '/images/Vêtements/Les accessoires/Le collier.jpeg', alt: 'Le collier', correctAnswer: 'Le collier', options: ['Le collier', 'Le bracelet', 'Les boucles d’oreilles', 'La montre'] },
+  { id: 'sac-a-dos', category: 'vetements', subcategory: 'accessoires', image: '/images/Vêtements/Les accessoires/Le sac à dos.jpeg', alt: 'Le sac à dos', correctAnswer: 'Le sac à dos', options: ['Le sac à dos', 'Le sac à main', 'La sacoche d’ordinateur', 'La banane'] },
+  { id: 'sac-a-main', category: 'vetements', subcategory: 'accessoires', image: '/images/Vêtements/Les accessoires/Le sac à main.jpeg', alt: 'Le sac à main', correctAnswer: 'Le sac à main', options: ['Le sac à main', 'Le sac à dos', 'La pochette / le portefeuille', 'La banane'] },
+  { id: 'boucles-d-oreilles', category: 'vetements', subcategory: 'accessoires', image: '/images/Vêtements/Les accessoires/Les boucles d’oreilles.jpeg', alt: 'Les boucles d’oreilles', correctAnswer: 'Les boucles d’oreilles', options: ['Les boucles d’oreilles', 'Le collier', 'Le bracelet', 'La montre'] },
+  { id: 'gants', category: 'vetements', subcategory: 'accessoires', image: '/images/Vêtements/Les accessoires/Les gants.jpeg', alt: 'Les gants', correctAnswer: 'Les gants', options: ['Les gants', 'L’écharpe', 'Le bonnet', 'Les chaussettes'] },
+  { id: 'lunettes', category: 'vetements', subcategory: 'accessoires', image: '/images/Vêtements/Les accessoires/Les lunettes.jpeg', alt: 'Les lunettes (de soleil)', correctAnswer: 'Les lunettes (de soleil)', options: ['Les lunettes (de soleil)', 'La montre', 'Le chapeau', 'Le bonnet'] },
+  { id: 'echarpe', category: 'vetements', subcategory: 'accessoires', image: '/images/Vêtements/Les accessoires/L’écharpe.jpeg', alt: 'L’écharpe', correctAnswer: 'L’écharpe', options: ['L’écharpe', 'Les gants', 'Le bonnet', 'La cravate'] },
+  { id: 'elastique', category: 'vetements', subcategory: 'accessoires', image: '/images/Vêtements/Les accessoires/L’élastique.jpeg', alt: 'L’élastique', correctAnswer: 'L’élastique', options: ['L’élastique', 'Le bracelet', 'La montre', 'Le bandeau'] },
 ]
