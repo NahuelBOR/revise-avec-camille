@@ -101,6 +101,7 @@ function PokerCard({ card, revealed, onSpeak }) {
           <Corner rank={card.rank} suit={card.suit} /><Corner rank={card.rank} suit={card.suit} br />
           <div className="face-body">
             <FaceRows rows={target} />
+            {card.word.note && <div className="card-note">{card.word.note}</div>}
           </div>
           {card.dir === 'es-fr' && <button className="listen on-card" onClick={(event) => { event.stopPropagation(); onSpeak(card.word.fr.join(', '), 'fr-FR') }}>🔊 Écouter</button>}
         </div>

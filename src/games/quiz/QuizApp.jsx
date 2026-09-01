@@ -40,7 +40,26 @@ export default function QuizApp({ onBack }) {
   }
 
   const startGame = (subcategoryId) => {
-    const picked = shuffle(questions.filter((q) => q.category === selectedCategory.id && q.subcategory === subcategoryId))
+    const list = questions.filter((q) => q.category === selectedCategory.id && q.subcategory === subcategoryId)
+    const hasMultiplePrompts = list.some((q, idx, arr) => idx > 0 && q.prompt !== arr[idx - 1].prompt)
+    let picked
+    if (hasMultiplePrompts) {
+      const groups = []
+      let currentGroup = []
+      let currentPrompt = list[0]?.prompt
+      list.forEach((q) => {
+        if (q.prompt !== currentPrompt) {
+          groups.push(currentGroup)
+          currentGroup = []
+          currentPrompt = q.prompt
+        }
+        currentGroup.push(q)
+      })
+      if (currentGroup.length) groups.push(currentGroup)
+      picked = groups.flatMap((grp) => shuffle(grp))
+    } else {
+      picked = shuffle(list)
+    }
     setTotalQuestions(picked.length); setCorrectAnswers(0); setCorrectStreak(0); setIncorrectStreak(0); setScreen('game'); loadQuestion(picked)
   }
 
@@ -58,10 +77,11 @@ export default function QuizApp({ onBack }) {
     window.setTimeout(() => loadQuestion(correct ? queue : [...queue, current]), correct ? 1350 : 1650)
   }
 
-  const speak = (word) => {
-    if (!('speechSynthesis' in window)) return
+  const speak = (text) => {
+    if (!('speechSynthesis' in window) || !text) return
     window.speechSynthesis.cancel()
-    const utterance = new SpeechSynthesisUtterance(word)
+    const cleanText = text.replace(/\([^)]*\)/g, '').replace(/\//g, ' ou ').trim()
+    const utterance = new SpeechSynthesisUtterance(cleanText)
     utterance.lang = 'fr-FR'; utterance.rate = 0.82
     window.speechSynthesis.speak(utterance)
   }
@@ -91,9 +111,17 @@ export default function QuizApp({ onBack }) {
         {screen === 'game' && current && <motion.section key={current.id} className="game-layout" initial={{ opacity: 0, x: 22 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -22 }}>
           <div className="game-top"><span>À toi de jouer</span><span>{total} carte{total > 1 ? 's' : ''} restante{total > 1 ? 's' : ''}</span></div>
           <div className="progress" aria-label={`${correctAnswers} de ${totalQuestions} respuestas correctas`}><motion.div initial={{ width: 0 }} animate={{ width: `${totalQuestions ? (correctAnswers / totalQuestions) * 100 : 0}%` }} /></div>
-          <div className="question-card"><div className="prompt">Comment ça s'appelle?</div><motion.div className="image-card" animate={feedback?.correct ? { scale: [1, 1.04, 1] } : feedback ? { x: [0, -10, 10, -7, 0] } : {}}>
-            <img src={current.image} alt={current.alt} /></motion.div>
-            <button className="listen" onClick={() => speak(current.correctAnswer)} aria-label={`Écouter la prononciation de ${current.correctAnswer}`}>🔊 Écouter la prononciation</button>
+          <div className="question-card"><div className="prompt">{current.prompt || "Comment ça s'appelle?"}</div><motion.div className="image-card" animate={feedback?.correct ? { scale: [1, 1.04, 1] } : feedback ? { x: [0, -10, 10, -7, 0] } : {}}>
+            {(current.displayNumber !== undefined || current.displayWord) ? (
+              <div className="number-card-display">
+                <span className={`number-val ${String(current.displayNumber || current.displayWord || '').length > 9 ? 'compact-num' : ''} ${current.displayWord ? 'word-val' : ''}`}>{current.displayNumber ?? current.displayWord}</span>
+                {current.subtitle && <span className="word-subtitle">{current.subtitle}</span>}
+              </div>
+            ) : (
+              <img src={current.image} alt={current.alt} />
+            )}
+          </motion.div>
+            <button className="listen" onClick={() => speak(current.displayWord || current.correctAnswer)} aria-label={`Écouter la prononciation`}>🔊 Écouter la prononciation</button>
             <div className="answers">{options.map((option, index) => { const state = feedback && (option === current.correctAnswer ? 'right' : option === feedback.choice ? 'wrong' : '')
               return <motion.button whileTap={{ scale: .98 }} key={option} className={`answer ${state || ''}`} onClick={() => answer(option)}><b>{String.fromCharCode(65 + index)}</b>{option}{state === 'right' && <strong>✓</strong>}{state === 'wrong' && <strong>×</strong>}</motion.button> })}</div>
             {feedback && <div className={`feedback ${feedback.correct ? 'good' : 'bad'}`}>{feedback.correct ? 'Très bien !' : <>La bonne réponse est : <b>{current.correctAnswer}</b></>}</div>}</div>
