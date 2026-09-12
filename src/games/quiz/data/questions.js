@@ -49,9 +49,51 @@ export const categories = [
     ]
   },
   { id: 'caractere', label: 'Le caractère', icon: '🎭', color: 'mint', subcategories: [{ id: 'caractere-general', label: 'Le caractère', icon: '🎭' }] },
-  { id: 'famille', label: 'La famille', icon: '👨‍👩‍👧‍👦', color: 'mint', subcategories: [{ id: 'famille-general', label: 'La famille', icon: '👪' }] },
-  { id: 'temps', label: 'Le temps', icon: '☀️', color: 'sky', subcategories: [{ id: 'temps-general', label: 'Le temps et météo', icon: '⛅' }] },
+  { id: 'famille', label: 'La famille', icon: '👨‍👩‍👧‍👦', color: 'mint', subcategories: [
+    { id: 'famille-proche', label: 'La famille proche', icon: '👨‍👩‍👧' },
+    { id: 'famille-elargie', label: 'La famille élargie', icon: '👵' },
+    { id: 'belle-famille', label: 'La belle-famille / famille recomposée', icon: '🤝' },
+    { id: 'couple-relations', label: 'Le couple et les relations', icon: '💑' },
+    { id: 'etat-civil', label: "L'état civil", icon: '💍' },
+  ] },
+  {
+    id: 'temps',
+    label: 'Le temps et la météo',
+    icon: '☀️',
+    color: 'sky',
+    subcategories: [
+      {
+        id: 'heure',
+        label: "L'heure",
+        icon: '⏰',
+        reminder: {
+          title: "Rappel : L'heure",
+          points: [
+            "Siempre se dice heure(s) en francés. No es como en español, que podemos decir «son las ocho».",
+            "No siempre es necesario especificar du matin / de l’après-midi / du soir. Se agrega cuando es necesario para aclarar de qué momento hablamos.",
+            "Se pueden usar los dos formatos: 12 h o 24 h. No se usa uno más que el otro, depende totalmente de cada persona."
+          ]
+        }
+      },
+      {
+        id: 'division-du-temps',
+        label: 'La division du temps',
+        icon: '📅'
+      }
+    ]
+  },
   { id: 'courses', label: 'Les courses', icon: '🛒', color: 'peach', subcategories: [{ id: 'courses-general', label: 'Faire les courses', icon: '🛍️' }] },
+  { id: 'objets-du-quotidien', label: 'Les objets du quotidien', icon: '📱', color: 'peach' },
+  {
+    id: 'fruits-et-legumes',
+    label: 'Les fruits et les légumes',
+    icon: '🍏',
+    color: 'mint',
+    subcategories: [
+      { id: 'fruits', label: 'Les fruits', icon: '🍎' },
+      { id: 'legumes', label: 'Les légumes', icon: '🥕' },
+    ]
+  },
 ]
 
 export const questions = [
@@ -456,4 +498,481 @@ export const questions = [
   { id: 'car-def-sympa', category: 'caractere', subcategory: 'caractere-general', displayWord: 'SYMPA', subtitle: 'Une personne sympa est une personne…', alt: 'Sympa', prompt: 'Trouve la bonne définition', correctAnswer: 'Agréable et avec qui on aime passer du temps.', options: ['Agréable et avec qui on aime passer du temps.', 'Qui parle très peu.', 'Qui est toujours triste.', "Qui n'aime pas partager."] },
   { id: 'car-def-curieux', category: 'caractere', subcategory: 'caractere-general', displayWord: 'CURIEUX / CURIEUSE', subtitle: 'Une personne curieuse…', alt: 'Curieux', prompt: 'Trouve la bonne définition', correctAnswer: 'Aime découvrir et apprendre de nouvelles choses.', options: ['Aime découvrir et apprendre de nouvelles choses.', "N'aime rien découvrir.", 'Aime toujours être seule.', 'A peur de parler aux autres.'] },
   { id: 'car-def-indifferent', category: 'caractere', subcategory: 'caractere-general', displayWord: 'INDIFFÉRENT(E)', subtitle: 'Une personne indifférente…', alt: 'Indifférent', prompt: 'Trouve la bonne définition', correctAnswer: "Ne s'intéresse pas vraiment à quelque chose ou à quelqu'un.", options: ["Ne s'intéresse pas vraiment à quelque chose ou à quelqu'un.", 'Veut toujours tout savoir.', 'Aime beaucoup parler.', 'Est toujours très heureuse.'] },
+
+  // LA FAMILLE PROCHE
+  { id: 'fam-proche-1', category: 'famille', subcategory: 'famille-proche', image: '/images/la famille/la famille.jpeg', alt: 'Arbre généalogique', prompt: 'Chantal est la ..... de Mathis.', correctAnswer: 'Maman / mère', options: ['Tante', 'Soeur', 'Maman / mère', 'La mamie'] },
+  { id: 'fam-proche-2', category: 'famille', subcategory: 'famille-proche', image: '/images/la famille/la famille.jpeg', alt: 'Arbre généalogique', prompt: 'Claude est le ..... de Thomas.', correctAnswer: 'Le père / le papa', options: ["L'oncle", 'Le tonton', 'Le papy', 'Le père / le papa'] },
+  { id: 'fam-proche-3', category: 'famille', subcategory: 'famille-proche', image: '/images/la famille/la famille.jpeg', alt: 'Arbre généalogique', prompt: 'Christine et Daniel sont les ..... de Pierre et Amélie.', correctAnswer: 'Parents', options: ['Tontons', 'Pères', 'Parents', 'Grands-pères'] },
+  { id: 'fam-proche-4', category: 'famille', subcategory: 'famille-proche', image: '/images/la famille/la famille.jpeg', alt: 'Arbre généalogique', prompt: "Pierre est le .... d'Amélie.", correctAnswer: 'Frère', options: ['Cousin', 'Oncle', 'Neveu', 'Frère'] },
+  { id: 'fam-proche-5', category: 'famille', subcategory: 'famille-proche', image: '/images/la famille/la famille.jpeg', alt: 'Arbre généalogique', prompt: 'Amélie est la .... de Pierre.', correctAnswer: 'Soeur', options: ['Soeur', 'Copine', 'Amie', 'Cousine'] },
+  { id: 'fam-proche-6', category: 'famille', subcategory: 'famille-proche', image: '/images/la famille/la famille.jpeg', alt: 'Arbre généalogique', prompt: 'Chloé est la ... de Vincent.', correctAnswer: 'Fille', options: ['Petite-fille', 'Nièce', 'Fille', 'Soeur'] },
+  { id: 'fam-proche-7', category: 'famille', subcategory: 'famille-proche', image: '/images/la famille/la famille.jpeg', alt: 'Arbre généalogique', prompt: 'Pierre est le ... de Christine et Daniel.', correctAnswer: 'Fils', options: ['Fils', 'Frère', 'Petit-fils', 'Neveu'] },
+  { id: 'fam-proche-8', category: 'famille', subcategory: 'famille-proche', image: '/images/la famille/la famille.jpeg', alt: 'Arbre généalogique', prompt: 'Pierre et Amélie sont les .... de Christine et Daniel.', correctAnswer: 'Enfants', options: ['Neveux', 'Enfants', 'Petits-fils', 'Filleuls'] },
+
+  // LA FAMILLE ÉLARGIE
+  { id: 'fam-elargie-1', category: 'famille', subcategory: 'famille-elargie', image: '/images/la famille/la famille.jpeg', alt: 'Arbre généalogique', prompt: 'Michel est le ..... de Thomas.', correctAnswer: ['Papy / Papi', 'Grand-père'], options: ['Papy / Papi', 'Papa', 'Grand-père', 'Oncle'] },
+  { id: 'fam-elargie-2', category: 'famille', subcategory: 'famille-elargie', image: '/images/la famille/la famille.jpeg', alt: 'Arbre généalogique', prompt: 'Jeanne est la ..... de Chloé.', correctAnswer: ['Mamie', 'Grand-mère'], options: ['Soeur', 'Tante', 'Mamie', 'Grand-mère'] },
+  { id: 'fam-elargie-3', category: 'famille', subcategory: 'famille-elargie', image: '/images/la famille/la famille.jpeg', alt: 'Arbre généalogique', prompt: "Victor et Jeanne sont les ..... d'Amélie et Chloé.", correctAnswer: 'Grands-parents', options: ['Parents', 'Grands-parents', 'Tontons', 'Parrains'] },
+  { id: 'fam-elargie-4', category: 'famille', subcategory: 'famille-elargie', image: '/images/la famille/la famille.jpeg', alt: 'Arbre généalogique', prompt: "Pierre est le .... d'Élise.", correctAnswer: 'Petit-fils', options: ['Fils', 'Neveu', 'Petit-fils', 'Copain'] },
+  { id: 'fam-elargie-5', category: 'famille', subcategory: 'famille-elargie', image: '/images/la famille/la famille.jpeg', alt: 'Arbre généalogique', prompt: 'Chloé est la .... de Victor.', correctAnswer: 'Petite-fille', options: ['Fille', 'Soeur', 'Petite-fille', 'Nièce'] },
+  { id: 'fam-elargie-6', category: 'famille', subcategory: 'famille-elargie', image: '/images/la famille/la famille.jpeg', alt: 'Arbre généalogique', prompt: 'Amélie et Chloé sont les .... de Victor et Jeanne.', correctAnswer: 'Petits-enfants', options: ['Enfants', 'Neveux', 'Filleuls', 'Petits-enfants'] },
+  { id: 'fam-elargie-7', category: 'famille', subcategory: 'famille-elargie', image: '/images/la famille/la famille.jpeg', alt: 'Arbre généalogique', prompt: "Vincent est le .... d'Amélie.", correctAnswer: ['Tonton', "L'oncle"], options: ['Tonton', "L'oncle", 'Le parrain', 'Le cousin'] },
+  { id: 'fam-elargie-8', category: 'famille', subcategory: 'famille-elargie', image: '/images/la famille/la famille.jpeg', alt: 'Arbre généalogique', prompt: 'Chantal est la .... de Pierre.', correctAnswer: ['Tata', 'Tante'], options: ['Marraine', 'Tata', 'Soeur', 'Tante'] },
+  { id: 'fam-elargie-9', category: 'famille', subcategory: 'famille-elargie', image: '/images/la famille/la famille.jpeg', alt: 'Arbre généalogique', prompt: 'Pierre est le .... de Chantal.', correctAnswer: 'Neveu', options: ['Fils', 'Frère', 'Neveu', 'Ami'] },
+  { id: 'fam-elargie-10', category: 'famille', subcategory: 'famille-elargie', image: '/images/la famille/la famille.jpeg', alt: 'Arbre généalogique', prompt: 'Chloé est la ... de Daniel.', correctAnswer: 'Nièce', options: ['Nièce', 'Marraine', 'Cousine', 'Tante'] },
+
+  // LA BELLE-FAMILLE / FAMILLE RECOMPOSÉE
+  { id: 'fam-belle-1', category: 'famille', subcategory: 'belle-famille', image: '/images/la famille/la famille.jpeg', alt: 'Arbre généalogique', prompt: 'Victor et Jeanne sont les .... de Christine.', correctAnswer: 'Les beaux-parents', options: ['Les grands-parents', 'Les tontons', 'Les parrains', 'Les beaux-parents'] },
+  { id: 'fam-belle-2', category: 'famille', subcategory: 'belle-famille', image: '/images/la famille/la famille.jpeg', alt: 'Arbre généalogique', prompt: 'Michel est le .... de Daniel.', correctAnswer: 'Le beau-père', options: ['Le beau-père', 'Le frère', 'Le parrain', 'Le neveu'] },
+  { id: 'fam-belle-3', category: 'famille', subcategory: 'belle-famille', image: '/images/la famille/la famille.jpeg', alt: 'Arbre généalogique', prompt: 'Jeanne est la .... de Christine.', correctAnswer: 'Belle-mère', options: ['Mère', 'Belle-mère', 'Tante', 'Marraine'] },
+  { id: 'fam-belle-4', category: 'famille', subcategory: 'belle-famille', image: '/images/la famille/la famille.jpeg', alt: 'Arbre généalogique', prompt: 'Vincent est le ... de Christine.', correctAnswer: 'Beau-frère', options: ['Fils', 'Frère', 'Neveu', 'Beau-frère'] },
+  { id: 'fam-belle-5', category: 'famille', subcategory: 'belle-famille', image: '/images/la famille/la famille.jpeg', alt: 'Arbre généalogique', prompt: 'Chantal est la .... de Daniel.', correctAnswer: 'Belle-sœur', options: ['Cousine', 'Belle-sœur', 'Tante', 'Soeur'] },
+
+  // LE COUPLE ET LES RELATIONS
+  { id: 'couple-marc-1', category: 'famille', subcategory: 'couple-relations', image: '/images/la famille/marcLisa.jpeg', alt: 'Marc et Lisa', prompt: 'Marc est le .... de Lisa.', correctAnswer: ['Petit-ami', 'Petit copain', 'Copain'], options: ['Petit-ami', 'Ami', 'Petit copain', 'Copain'] },
+  { id: 'couple-lisa-1', category: 'famille', subcategory: 'couple-relations', image: '/images/la famille/marcLisa.jpeg', alt: 'Marc et Lisa', prompt: 'Lisa est la ...... de Marc.', correctAnswer: 'Copine', options: ['Copine', 'Amie', 'Petite-copine', 'Petite-amie'] },
+  { id: 'couple-marc-lisa', category: 'famille', subcategory: 'couple-relations', image: '/images/la famille/marcLisa.jpeg', alt: 'Marc et Lisa', prompt: 'Marc et Lisa sont .....', correctAnswer: 'En couple', options: ['En couple', 'Frères et soeurs', 'Amis', 'Cousins'] },
+  { id: 'couple-paul-manon-1', category: 'famille', subcategory: 'couple-relations', image: '/images/la famille/paulmanon.jpeg', alt: 'Paul et Manon', prompt: 'Paul et Manon sont ....', correctAnswer: 'Fiancés', options: ['Mariés', "Célib'", 'Fiancés', 'Copains'] },
+  { id: 'couple-paul-1', category: 'famille', subcategory: 'couple-relations', image: '/images/la famille/paulmanon.jpeg', alt: 'Paul et Manon', prompt: 'Paul est le .... de Manon.', correctAnswer: 'Fiancé', options: ['Mari', 'Fiancé', 'Copain', 'Neveu'] },
+  { id: 'couple-manon-1', category: 'famille', subcategory: 'couple-relations', image: '/images/la famille/paulmanon.jpeg', alt: 'Paul et Manon', prompt: 'Manon est la .... de Paul.', correctAnswer: 'Fiancée', options: ['Nièce', 'Femme', 'Fiancée', 'Tante'] },
+
+  // L'ÉTAT CIVIL
+  { id: 'etat-celibataire', category: 'famille', subcategory: 'etat-civil', image: '/images/la famille/célibataire.jpeg', alt: 'Laura', prompt: 'Laura est .....', correctAnswer: "Célibataire / célib' (fam)", options: ['Seule', 'Solaire', "Célibataire / célib' (fam)", 'En couple'] },
+  { id: 'etat-ophelie-mariee', category: 'famille', subcategory: 'etat-civil', image: '/images/la famille/samuel.jpeg', alt: 'Ophélie et Samuel', prompt: 'Ophélie est ...', correctAnswer: 'Mariée', options: ['Femme', 'Mari', 'Divorcée', 'Mariée'] },
+  { id: 'etat-samuel-mari', category: 'famille', subcategory: 'etat-civil', image: '/images/la famille/samuel.jpeg', alt: 'Ophélie et Samuel', prompt: "Samuel est .... d'Ophélie.", correctAnswer: ['Le mari', "L'époux"], options: ['Le mari', 'La témoin', "L'époux", 'Le neveu'] },
+  { id: 'etat-ophelie-femme', category: 'famille', subcategory: 'etat-civil', image: '/images/la famille/samuel.jpeg', alt: 'Ophélie et Samuel', prompt: 'Ophélie est ..... de Samuel.', correctAnswer: ['La femme', "L'épouse"], options: ["La demoiselle d'honneur", 'La femme', "L'épouse", 'La tante'] },
+  { id: 'etat-samuel-maries', category: 'famille', subcategory: 'etat-civil', image: '/images/la famille/samuel.jpeg', alt: 'Ophélie et Samuel', prompt: 'Ophélie et Samuel sont ....', correctAnswer: 'Mariés', options: ['Veufs', 'Amis', 'Mariés', "Célibataires / Célib' (fam)"] },
+  { id: 'etat-pacs', category: 'famille', subcategory: 'etat-civil', image: '/images/la famille/pacs.jpeg', alt: 'Le PACS', prompt: "Le PACS est l'équivalent de… / El PACS es el equivalente de…", correctAnswer: 'Una forma de unión legal (unión civil / concubinato)', options: ['Comprar una casa', 'Preparar un testamento', 'Una forma de unión legal (unión civil / concubinato)', 'Hacer una donación'] },
+  { id: 'etat-separes', category: 'famille', subcategory: 'etat-civil', image: '/images/la famille/paulinanicolas.jpeg', alt: 'Pauline et Nicolas', prompt: 'Pauline et Nicolas sont .....', correctAnswer: 'Séparés', options: ['Pacsés', 'Séparés', 'Mariés', 'Veufs'] },
+  { id: 'etat-divorces', category: 'famille', subcategory: 'etat-civil', image: '/images/la famille/Alexis et Clara.jpeg', alt: 'Alexis et Clara', prompt: 'Alexis et Clara sont .....', correctAnswer: 'Divorcés', options: ['Mariés', 'Séparés', 'Divorcés', 'Fiancés'] },
+  { id: 'etat-veuf', category: 'famille', subcategory: 'etat-civil', image: '/images/la famille/Henry .jpeg', alt: 'Henry', prompt: 'Henry est ......', correctAnswer: 'Veuf', options: ['Veuf', 'Marié', 'Pacsé', 'Séparé'] },
+  { id: 'etat-veuve', category: 'famille', subcategory: 'etat-civil', image: '/images/la famille/Susanne .jpeg', alt: 'Susanne', prompt: 'Susanne est ....', correctAnswer: 'Veuve', options: ['Veuf', 'Pacsée', 'Séparée', 'Veuve'] },
+
+  // LES OBJETS DU QUOTIDIEN
+  { id: 'objet-prise', category: 'objets-du-quotidien', image: '/images/LES OBJETS DU QUOTIDIEN/prise.jpeg', alt: 'La prise', correctAnswer: 'La prise', options: ['La prise', 'La rallonge', 'Le chargeur', 'La bougie'] },
+  { id: 'objet-portable', category: 'objets-du-quotidien', image: '/images/LES OBJETS DU QUOTIDIEN/portable.jpeg', alt: 'Le téléphone / le portable', correctAnswer: 'Le téléphone / le portable', options: ['Le téléphone / le portable', 'La tablette', 'L’ordinateur / l’ordi', 'L’appareil photo'] },
+  { id: 'objet-ordinateur', category: 'objets-du-quotidien', image: '/images/LES OBJETS DU QUOTIDIEN/ordinateur.jpeg', alt: 'L’ordinateur / l’ordi', correctAnswer: 'L’ordinateur / l’ordi', options: ['L’ordinateur / l’ordi', 'La tablette', 'Le clavier', 'La souris'] },
+  { id: 'objet-souris', category: 'objets-du-quotidien', image: '/images/LES OBJETS DU QUOTIDIEN/souris.jpeg', alt: 'La souris', correctAnswer: 'La souris', options: ['La souris', 'Le clavier', 'Le chargeur', 'Les écouteurs'] },
+  { id: 'objet-clavier', category: 'objets-du-quotidien', image: '/images/LES OBJETS DU QUOTIDIEN/clavier.jpeg', alt: 'Le clavier', correctAnswer: 'Le clavier', options: ['Le clavier', 'La souris', 'L’ordinateur / l’ordi', 'La télécommande / la manette'] },
+  { id: 'objet-chargeur', category: 'objets-du-quotidien', image: '/images/LES OBJETS DU QUOTIDIEN/chargeur.jpeg', alt: 'Le chargeur', correctAnswer: 'Le chargeur', options: ['Le chargeur', 'La prise', 'La rallonge', 'Les écouteurs'] },
+  { id: 'objet-manette', category: 'objets-du-quotidien', image: '/images/LES OBJETS DU QUOTIDIEN/manete.jpeg', alt: 'La télécommande / la manette', correctAnswer: 'La télécommande / la manette', options: ['La télécommande / la manette', 'Le téléphone / le portable', 'Le chargeur', 'Le casque'] },
+  { id: 'objet-ecouteurs', category: 'objets-du-quotidien', image: '/images/LES OBJETS DU QUOTIDIEN/ecouteurs.jpeg', alt: 'Les écouteurs', correctAnswer: 'Les écouteurs', options: ['Les écouteurs', 'Le casque', 'Le chargeur', 'Le téléphone / le portable'] },
+  { id: 'objet-casque', category: 'objets-du-quotidien', image: '/images/LES OBJETS DU QUOTIDIEN/casque.jpeg', alt: 'Le casque', correctAnswer: 'Le casque', options: ['Le casque', 'Les écouteurs', 'La télécommande / la manette', 'L’ordinateur / l’ordi'] },
+  { id: 'objet-appareil-photo', category: 'objets-du-quotidien', image: '/images/LES OBJETS DU QUOTIDIEN/camara.jpeg', alt: 'L’appareil photo', correctAnswer: 'L’appareil photo', options: ['L’appareil photo', 'Le téléphone / le portable', 'La tablette', 'Le casque'] },
+  { id: 'objet-cles', category: 'objets-du-quotidien', image: '/images/LES OBJETS DU QUOTIDIEN/cle.jpeg', alt: 'Les clés', correctAnswer: 'Les clés', options: ['Les clés', 'Le portefeuille', 'La carte (bancaire, de transport...)', 'Le sac à dos'] },
+  { id: 'objet-portefeuille', category: 'objets-du-quotidien', image: '/images/LES OBJETS DU QUOTIDIEN/portefeuie.jpeg', alt: 'Le portefeuille', correctAnswer: 'Le portefeuille', options: ['Le portefeuille', 'La carte (bancaire, de transport...)', 'Le sac à dos', 'Les clés'] },
+  { id: 'objet-sac-a-dos', category: 'objets-du-quotidien', image: '/images/LES OBJETS DU QUOTIDIEN/sacados.jpeg', alt: 'Le sac à dos', correctAnswer: 'Le sac à dos', options: ['Le sac à dos', 'Le sachet / le sac plastique', 'Le portefeuille', 'La boîte'] },
+  { id: 'objet-stylo', category: 'objets-du-quotidien', image: '/images/LES OBJETS DU QUOTIDIEN/stylo.jpeg', alt: 'Le stylo', correctAnswer: 'Le stylo', options: ['Le stylo', 'Le crayon de papier', 'La feuille / le papier', 'Les ciseaux'] },
+  { id: 'objet-crayon-papier', category: 'objets-du-quotidien', image: '/images/LES OBJETS DU QUOTIDIEN/crayon.jpeg', alt: 'Le crayon de papier', correctAnswer: 'Le crayon de papier', options: ['Le crayon de papier', 'Le stylo', 'La feuille / le papier', 'Le livre'] },
+  { id: 'objet-feuille-papier', category: 'objets-du-quotidien', image: '/images/LES OBJETS DU QUOTIDIEN/feuille.jpeg', alt: 'La feuille / le papier', correctAnswer: 'La feuille / le papier', options: ['La feuille / le papier', 'Le livre', 'Le mouchoir', 'Le crayon de papier'] },
+  { id: 'objet-livre', category: 'objets-du-quotidien', image: '/images/LES OBJETS DU QUOTIDIEN/livre.jpeg', alt: 'Le livre', correctAnswer: 'Le livre', options: ['Le livre', 'La feuille / le papier', 'Le tiroir', 'La boîte'] },
+  { id: 'objet-mouchoir', category: 'objets-du-quotidien', image: '/images/LES OBJETS DU QUOTIDIEN/mouchoir.jpeg', alt: 'Le mouchoir', correctAnswer: 'Le mouchoir', options: ['Le mouchoir', 'La feuille / le papier', 'Le pansement', 'Le sachet / le sac plastique'] },
+  { id: 'objet-carte', category: 'objets-du-quotidien', image: '/images/LES OBJETS DU QUOTIDIEN/carte.jpeg', alt: 'La carte (bancaire, de transport...)', correctAnswer: 'La carte (bancaire, de transport...)', options: ['La carte (bancaire, de transport...)', 'Le portefeuille', 'Les clés', 'Le livre'] },
+  { id: 'objet-voiture', category: 'objets-du-quotidien', image: '/images/LES OBJETS DU QUOTIDIEN/voiture.jpeg', alt: 'La voiture', correctAnswer: 'La voiture', options: ['La voiture', 'Les clés', 'La laisse', 'Le sac à dos'] },
+  { id: 'objet-pansement', category: 'objets-du-quotidien', image: '/images/LES OBJETS DU QUOTIDIEN/pansemants.jpeg', alt: 'Le pansement', correctAnswer: 'Le pansement', options: ['Le pansement', 'Le mouchoir', 'Le scotch', 'La superglue'] },
+  { id: 'objet-laisse', category: 'objets-du-quotidien', image: '/images/LES OBJETS DU QUOTIDIEN/laisse.jpeg', alt: 'La laisse', correctAnswer: 'La laisse', options: ['La laisse', 'La rallonge', 'Le sachet / le sac plastique', 'La voiture'] },
+  { id: 'objet-sac-plastique', category: 'objets-du-quotidien', image: '/images/LES OBJETS DU QUOTIDIEN/sac.jpeg', alt: 'Le sachet / le sac plastique', correctAnswer: 'Le sachet / le sac plastique', options: ['Le sachet / le sac plastique', 'Le sac à dos', 'La boîte', 'Le mouchoir'] },
+  { id: 'objet-boite', category: 'objets-du-quotidien', image: '/images/LES OBJETS DU QUOTIDIEN/boite.jpeg', alt: 'La boîte', correctAnswer: 'La boîte', options: ['La boîte', 'Le tiroir', 'Le sac à dos', 'Le portefeuille'] },
+  { id: 'objet-ciseaux', category: 'objets-du-quotidien', image: '/images/LES OBJETS DU QUOTIDIEN/ciseaux.jpeg', alt: 'Les ciseaux', correctAnswer: 'Les ciseaux', options: ['Les ciseaux', 'Le scotch', 'La colle', 'Le stylo'] },
+  { id: 'objet-scotch', category: 'objets-du-quotidien', image: '/images/LES OBJETS DU QUOTIDIEN/scoch.jpeg', alt: 'Le scotch', correctAnswer: 'Le scotch', options: ['Le scotch', 'La colle', 'La superglue', 'Les ciseaux'] },
+  { id: 'objet-superglue', category: 'objets-du-quotidien', image: '/images/LES OBJETS DU QUOTIDIEN/superglue.jpeg', alt: 'La superglue', correctAnswer: 'La superglue', options: ['La superglue', 'La colle', 'Le scotch', 'Les ciseaux'] },
+  { id: 'objet-bougie', category: 'objets-du-quotidien', image: '/images/LES OBJETS DU QUOTIDIEN/bougie.jpeg', alt: 'La bougie', correctAnswer: 'La bougie', options: ['La bougie', 'La prise', 'La boîte', 'Le livre'] },
+  { id: 'objet-rallonge', category: 'objets-du-quotidien', image: '/images/LES OBJETS DU QUOTIDIEN/ralonge.jpeg', alt: 'La rallonge', correctAnswer: 'La rallonge', options: ['La rallonge', 'La prise', 'Le chargeur', 'La laisse'] },
+  { id: 'objet-tiroir', category: 'objets-du-quotidien', image: '/images/LES OBJETS DU QUOTIDIEN/tiroir.jpeg', alt: 'Le tiroir', correctAnswer: 'Le tiroir', options: ['Le tiroir', 'La boîte', 'Le livre', 'Le sac à dos'] },
+
+  // LES FRUITS ET LES LÉGUMES - LES FRUITS
+  { id: 'fruit-pomme', category: 'fruits-et-legumes', subcategory: 'fruits', image: '/images/Les fruits et les légumes/Les fruits/pomme.jpeg', alt: 'La pomme', correctAnswer: 'La pomme', options: ['La pomme', 'La poire', 'La pêche', 'L’abricot'] },
+  { id: 'fruit-poire', category: 'fruits-et-legumes', subcategory: 'fruits', image: '/images/Les fruits et les légumes/Les fruits/poire.jpeg', alt: 'La poire', correctAnswer: 'La poire', options: ['La poire', 'La pomme', 'Le melon', 'La pêche'] },
+  { id: 'fruit-banane', category: 'fruits-et-legumes', subcategory: 'fruits', image: '/images/Les fruits et les légumes/Les fruits/banana.jpeg', alt: 'La banane', correctAnswer: 'La banane', options: ['La banane', 'Le citron', 'L’ananas', 'La poire'] },
+  { id: 'fruit-orange', category: 'fruits-et-legumes', subcategory: 'fruits', image: '/images/Les fruits et les légumes/Les fruits/orange.jpeg', alt: 'L’orange', correctAnswer: 'L’orange', options: ['L’orange', 'Le citron', 'L’abricot', 'La pêche'] },
+  { id: 'fruit-citron', category: 'fruits-et-legumes', subcategory: 'fruits', image: '/images/Les fruits et les légumes/Les fruits/citron.jpeg', alt: 'Le citron', correctAnswer: 'Le citron', options: ['Le citron', 'L’orange', 'La banane', 'La pomme'] },
+  { id: 'fruit-fraise', category: 'fruits-et-legumes', subcategory: 'fruits', image: '/images/Les fruits et les légumes/Les fruits/fraise.jpeg', alt: 'La fraise', correctAnswer: 'La fraise', options: ['La fraise', 'La framboise', 'La cerise', 'La myrtille'] },
+  { id: 'fruit-framboise', category: 'fruits-et-legumes', subcategory: 'fruits', image: '/images/Les fruits et les légumes/Les fruits/framboise.jpeg', alt: 'La framboise', correctAnswer: 'La framboise', options: ['La framboise', 'La fraise', 'La myrtille', 'La cerise'] },
+  { id: 'fruit-myrtille', category: 'fruits-et-legumes', subcategory: 'fruits', image: '/images/Les fruits et les légumes/Les fruits/blueberry.jpeg', alt: 'La myrtille', correctAnswer: 'La myrtille', options: ['La myrtille', 'Le raisin', 'La framboise', 'La cerise'] },
+  { id: 'fruit-raisin', category: 'fruits-et-legumes', subcategory: 'fruits', image: '/images/Les fruits et les légumes/Les fruits/raisin.jpeg', alt: 'Le raisin', correctAnswer: 'Le raisin', options: ['Le raisin', 'La myrtille', 'La cerise', 'La fraise'] },
+  { id: 'fruit-pasteque', category: 'fruits-et-legumes', subcategory: 'fruits', image: '/images/Les fruits et les légumes/Les fruits/pasteque.jpeg', alt: 'La pastèque', correctAnswer: 'La pastèque', options: ['La pastèque', 'Le melon', 'L’ananas', 'La pomme'] },
+  { id: 'fruit-melon', category: 'fruits-et-legumes', subcategory: 'fruits', image: '/images/Les fruits et les légumes/Les fruits/melon.jpeg', alt: 'Le melon', correctAnswer: 'Le melon', options: ['Le melon', 'La pastèque', 'La poire', 'L’ananas'] },
+  { id: 'fruit-ananas', category: 'fruits-et-legumes', subcategory: 'fruits', image: '/images/Les fruits et les légumes/Les fruits/anana.jpeg', alt: 'L’ananas', correctAnswer: 'L’ananas', options: ['L’ananas', 'La pastèque', 'Le melon', 'La banane'] },
+  { id: 'fruit-peche', category: 'fruits-et-legumes', subcategory: 'fruits', image: '/images/Les fruits et les légumes/Les fruits/peche.jpeg', alt: 'La pêche', correctAnswer: 'La pêche', options: ['La pêche', 'L’abricot', 'La pomme', 'La poire'] },
+  { id: 'fruit-abricot', category: 'fruits-et-legumes', subcategory: 'fruits', image: '/images/Les fruits et les légumes/Les fruits/apricot.jpeg', alt: 'L’abricot', correctAnswer: 'L’abricot', options: ['L’abricot', 'La pêche', 'L’orange', 'Le citron'] },
+  { id: 'fruit-cerise', category: 'fruits-et-legumes', subcategory: 'fruits', image: '/images/Les fruits et les légumes/Les fruits/cerice.jpeg', alt: 'La cerise', correctAnswer: 'La cerise', options: ['La cerise', 'La fraise', 'La framboise', 'Le raisin'] },
+
+  // LES FRUITS ET LES LÉGUMES - LES LÉGUMES
+  { id: 'legume-carotte', category: 'fruits-et-legumes', subcategory: 'legumes', image: '/images/Les fruits et les légumes/Les légumes/carrote.jpeg', alt: 'La carotte', correctAnswer: 'La carotte', options: ['La carotte', 'Le concombre', 'La courgette', 'Le poireau'] },
+  { id: 'legume-tomate', category: 'fruits-et-legumes', subcategory: 'legumes', image: '/images/Les fruits et les légumes/Les légumes/tomate.jpeg', alt: 'La tomate', correctAnswer: 'La tomate', options: ['La tomate', 'Le poivron', 'L’aubergine', 'La citrouille'] },
+  { id: 'legume-pomme-de-terre', category: 'fruits-et-legumes', subcategory: 'legumes', image: '/images/Les fruits et les légumes/Les légumes/pomme de terre.jpeg', alt: 'La pomme de terre / la patate', correctAnswer: 'La pomme de terre / la patate (fam.)', options: ['La pomme de terre / la patate (fam.)', 'La patate douce', 'L’oignon', 'Le champignon'] },
+  { id: 'legume-patate-douce', category: 'fruits-et-legumes', subcategory: 'legumes', image: '/images/Les fruits et les légumes/Les légumes/patate douce.jpeg', alt: 'La patate douce', correctAnswer: 'La patate douce', options: ['La patate douce', 'La pomme de terre / la patate (fam.)', 'La citrouille', 'La carotte'] },
+  { id: 'legume-citrouille', category: 'fruits-et-legumes', subcategory: 'legumes', image: '/images/Les fruits et les légumes/Les légumes/citrouille.jpeg', alt: 'La citrouille', correctAnswer: 'La citrouille', options: ['La citrouille', 'La courgette', 'Le poivron', 'La patate douce'] },
+  { id: 'legume-oignon', category: 'fruits-et-legumes', subcategory: 'legumes', image: '/images/Les fruits et les légumes/Les légumes/oinion.jpeg', alt: 'L’oignon', correctAnswer: 'L’oignon', options: ['L’oignon', 'L’ail', 'Le poireau', 'La pomme de terre / la patate (fam.)'] },
+  { id: 'legume-ail', category: 'fruits-et-legumes', subcategory: 'legumes', image: '/images/Les fruits et les légumes/Les légumes/ail.jpeg', alt: 'L’ail', correctAnswer: 'L’ail', options: ['L’ail', 'L’oignon', 'Le poireau', 'Le champignon'] },
+  { id: 'legume-poireau', category: 'fruits-et-legumes', subcategory: 'legumes', image: '/images/Les fruits et les légumes/Les légumes/poirreaux.jpeg', alt: 'Le poireau', correctAnswer: 'Le poireau', options: ['Le poireau', 'L’oignon', 'Le concombre', 'La courgette'] },
+  { id: 'legume-avocat', category: 'fruits-et-legumes', subcategory: 'legumes', image: '/images/Les fruits et les légumes/Les légumes/avocat.jpeg', alt: 'L’avocat', correctAnswer: 'L’avocat', options: ['L’avocat', 'Le concombre', 'La courgette', 'L’aubergine'] },
+  { id: 'legume-courgette', category: 'fruits-et-legumes', subcategory: 'legumes', image: '/images/Les fruits et les légumes/Les légumes/courget.jpeg', alt: 'La courgette', correctAnswer: 'La courgette', options: ['La courgette', 'Le concombre', 'L’aubergine', 'Le poivron'] },
+  { id: 'legume-aubergine', category: 'fruits-et-legumes', subcategory: 'legumes', image: '/images/Les fruits et les légumes/Les légumes/aubergine.jpeg', alt: 'L’aubergine', correctAnswer: 'L’aubergine', options: ['L’aubergine', 'La courgette', 'Le poivron', 'La tomate'] },
+  { id: 'legume-poivron', category: 'fruits-et-legumes', subcategory: 'legumes', image: '/images/Les fruits et les légumes/Les légumes/poivron.jpeg', alt: 'Le poivron', correctAnswer: 'Le poivron', options: ['Le poivron', 'La tomate', 'L’aubergine', 'La courgette'] },
+  { id: 'legume-concombre', category: 'fruits-et-legumes', subcategory: 'legumes', image: '/images/Les fruits et les légumes/Les légumes/concombre.jpeg', alt: 'Le concombre', correctAnswer: 'Le concombre', options: ['Le concombre', 'La courgette', 'Le poireau', 'L’avocat'] },
+  { id: 'legume-salade', category: 'fruits-et-legumes', subcategory: 'legumes', image: '/images/Les fruits et les légumes/Les légumes/salade.jpeg', alt: 'La salade', correctAnswer: 'La salade', options: ['La salade', 'Les épinards', 'Les haricots verts (masc.)', 'Le poireau'] },
+  { id: 'legume-haricots-verts', category: 'fruits-et-legumes', subcategory: 'legumes', image: '/images/Les fruits et les légumes/Les légumes/harricot.jpeg', alt: 'Les haricots verts', correctAnswer: 'Les haricots verts (masc.)', options: ['Les haricots verts (masc.)', 'Les épinards', 'Le poireau', 'La salade'] },
+  { id: 'legume-epinards', category: 'fruits-et-legumes', subcategory: 'legumes', image: '/images/Les fruits et les légumes/Les légumes/epinard.jpeg', alt: 'Les épinards', correctAnswer: 'Les épinards', options: ['Les épinards', 'La salade', 'Les haricots verts (masc.)', 'Le concombre'] },
+  { id: 'legume-champignon', category: 'fruits-et-legumes', subcategory: 'legumes', image: '/images/Les fruits et les légumes/Les légumes/champignon.jpeg', alt: 'Le champignon', correctAnswer: 'Le champignon', options: ['Le champignon', 'L’ail', 'L’oignon', 'La pomme de terre / la patate (fam.)'] },
+
+  // LE TEMPS ET LA MÉTÉO - L'HEURE
+  {
+    id: 'heure-la-minute',
+    category: 'temps',
+    subcategory: 'heure',
+    image: "/images/Le temps et la météo/L'heure/La minute.jpeg",
+    alt: 'La minute',
+    correctAnswer: 'La minute',
+    options: ['La demie-heure', 'La minute', 'La seconde', 'Minuit']
+  },
+  {
+    id: 'heure-la-seconde',
+    category: 'temps',
+    subcategory: 'heure',
+    image: "/images/Le temps et la météo/L'heure/La seconde.jpeg",
+    alt: 'La seconde',
+    correctAnswer: 'La seconde',
+    options: ['La minute', "L'heure", 'La seconde', 'Minuit']
+  },
+  {
+    id: 'heure-8-heures',
+    category: 'temps',
+    subcategory: 'heure',
+    image: "/images/Le temps et la météo/L'heure/8 heures.jpeg",
+    alt: '8:00',
+    prompt: 'Quelle heure est-il ?',
+    correctAnswer: 'Il est huit heures',
+    options: ['Il est huit', 'Il est huit heures', 'Ils sont les huits', 'Il est sept heures']
+  },
+  {
+    id: 'heure-8-heures-pile',
+    category: 'temps',
+    subcategory: 'heure',
+    image: "/images/Le temps et la météo/L'heure/8 heures.jpeg",
+    alt: '8:00 pile',
+    prompt: 'Quelle heure est-il ?',
+    correctAnswer: 'Il est huit heures pile.',
+    explanation: '« Pile », comme en espagnol, s’utilise seulement si c’est pertinent : pour un horaire de train, de métro, une réunion, etc.',
+    options: ['Il est huit heures pile.', 'Il est huit heures et point.', 'Il est sept heures pile.', 'Il est huit heures et demie.']
+  },
+  {
+    id: 'heure-8h-du-matin',
+    category: 'temps',
+    subcategory: 'heure',
+    image: "/images/Le temps et la météo/L'heure/8h du matin.jpeg",
+    alt: '8:00 AM',
+    prompt: 'Quelle heure est-il ?',
+    correctAnswer: 'Il est huit heures du matin.',
+    options: ['Il est huit heures et quart.', 'Il est huit heures du matin.', 'Il est huit heures du soir.', "Il est huit heures de l'après-midi."]
+  },
+  {
+    id: 'heure-seize-heures',
+    category: 'temps',
+    subcategory: 'heure',
+    image: "/images/Le temps et la météo/L'heure/Seize heures.jpeg",
+    alt: '16:00',
+    prompt: 'Quelle heure est-il ?',
+    correctAnswer: ['Il est quatre heures de l’après-midi.', 'Il est seize heures.'],
+    options: ["Il est six heures de l'après-midi.", 'Il est quatre heures de l’après-midi.', 'Il est dix-six heures.', 'Il est seize heures.']
+  },
+  {
+    id: 'heure-8-heures-du-soir',
+    category: 'temps',
+    subcategory: 'heure',
+    image: "/images/Le temps et la météo/L'heure/8 heures du soir.jpeg",
+    alt: '8:00 PM',
+    prompt: 'Quelle heure est-il ?',
+    correctAnswer: ['Il est huit heures du soir.', 'Il est vingt heures.'],
+    options: ['Il est neuf heures.', 'Il est huit heures du soir.', 'Il est vingt heures.', 'Il est dix-huit heures.']
+  },
+  {
+    id: 'heure-8h-et-quart',
+    category: 'temps',
+    subcategory: 'heure',
+    image: "/images/Le temps et la météo/L'heure/8h et quart.jpeg",
+    alt: '08:15',
+    prompt: 'Quelle heure est-il ?',
+    correctAnswer: 'Il est huit heures et quart.',
+    options: ['Il est huit heures et quart.', 'Il est huit heures et demie.', 'Il est huit heures du soir.', 'Il est neuf heures moins le quart.']
+  },
+  {
+    id: 'heure-8h-quarante-cinq',
+    category: 'temps',
+    subcategory: 'heure',
+    image: "/images/Le temps et la météo/L'heure/8h quarante-cinq.jpeg",
+    alt: '08:45',
+    prompt: 'Quelle heure est-il ?',
+    correctAnswer: ['Il est neuf heures moins le quart.', 'Il est huit heures quarante-cinq.'],
+    options: ['Il est huit heures moins le quart.', 'Il est neuf heures moins le quart.', 'Il est huit heures quarante-cinq.', 'Il est neuf heures quarante-cinq.']
+  },
+  {
+    id: 'heure-huit-heures-et-demie',
+    category: 'temps',
+    subcategory: 'heure',
+    image: "/images/Le temps et la météo/L'heure/Huit heures et demie.jpeg",
+    alt: '08:30',
+    prompt: 'Quelle heure est-il ?',
+    correctAnswer: 'Il est huit heures et demie.',
+    options: ['Il est huit heures et midi.', 'Il est huit heures et moitiée.', 'Il est huit heures et milieu.', 'Il est huit heures et demie.']
+  },
+  {
+    id: 'heure-midi',
+    category: 'temps',
+    subcategory: 'heure',
+    image: "/images/Le temps et la météo/L'heure/Midi.jpeg",
+    alt: '12:00',
+    prompt: 'Quelle heure est-il ?',
+    correctAnswer: 'Il est midi.',
+    explanation: '« Midi » signifie directement « midi », c’est pourquoi on ne dit pas « heure ».\nEx. : Il est midi. / Il est midi vingt.',
+    options: ['Il est midi heures.', 'Il est midi.', 'Il est la douze.', 'Il est minuit.']
+  },
+  {
+    id: 'heure-minuit',
+    category: 'temps',
+    subcategory: 'heure',
+    image: "/images/Le temps et la météo/L'heure/Minuit.jpeg",
+    alt: '00:00',
+    prompt: 'Quelle heure est-il ?',
+    correctAnswer: 'Il est minuit.',
+    explanation: '« Minuit » signifie directement « minuit », c’est pourquoi on ne dit pas « heure ».\nEx. : Il est minuit. / Il est minuit vingt.\n⚠️ Pour parler de 12 heures du soir, on ne peut pas dire « douze heures ».',
+    options: ['Il est minuit.', 'Il est midi.', 'Il est minuit heure.', 'Il est douze heures de la nuit.']
+  },
+
+  // LE TEMPS ET LA MÉTÉO - LA DIVISION DU TEMPS
+  // Saisons
+  {
+    id: 'division-temps-printemps',
+    category: 'temps',
+    subcategory: 'division-du-temps',
+    image: "/images/Le temps et la météo/LA DIVISION DU TEMPS/pritemps.jpeg",
+    alt: 'Printemps',
+    prompt: 'Quelle saison est-ce ?',
+    correctAnswer: 'Printemps',
+    options: ['Printemps', 'Été', 'Automne', 'Hiver']
+  },
+  {
+    id: 'division-temps-ete',
+    category: 'temps',
+    subcategory: 'division-du-temps',
+    image: "/images/Le temps et la météo/LA DIVISION DU TEMPS/ete.jpeg",
+    alt: 'Été',
+    prompt: 'Quelle saison est-ce ?',
+    correctAnswer: 'Été',
+    options: ['Été', 'Printemps', 'Automne', 'Hiver']
+  },
+  {
+    id: 'division-temps-automne',
+    category: 'temps',
+    subcategory: 'division-du-temps',
+    image: "/images/Le temps et la météo/LA DIVISION DU TEMPS/autonme.jpeg",
+    alt: 'Automne',
+    prompt: 'Quelle saison est-ce ?',
+    correctAnswer: 'Automne',
+    options: ['Automne', 'Hiver', 'Printemps', 'Été']
+  },
+  {
+    id: 'division-temps-hiver',
+    category: 'temps',
+    subcategory: 'division-du-temps',
+    image: "/images/Le temps et la météo/LA DIVISION DU TEMPS/hiver.jpeg",
+    alt: 'Hiver',
+    prompt: 'Quelle saison est-ce ?',
+    correctAnswer: 'Hiver',
+    options: ['Hiver', 'Automne', 'Été', 'Printemps']
+  },
+
+  // Mois de l'année
+  {
+    id: 'division-temps-janvier',
+    category: 'temps',
+    subcategory: 'division-du-temps',
+    image: "/images/Le temps et la météo/LA DIVISION DU TEMPS/janvier.jpeg",
+    alt: 'Janvier',
+    prompt: 'Quel mois est-ce ?',
+    correctAnswer: 'Janvier',
+    options: ['Janvier', 'Février', 'Décembre', 'Mars']
+  },
+  {
+    id: 'division-temps-fevrier',
+    category: 'temps',
+    subcategory: 'division-du-temps',
+    image: "/images/Le temps et la météo/LA DIVISION DU TEMPS/fevrier.jpeg",
+    alt: 'Février',
+    prompt: 'Quel mois est-ce ?',
+    correctAnswer: 'Février',
+    options: ['Février', 'Janvier', 'Mars', 'Avril']
+  },
+  {
+    id: 'division-temps-mars',
+    category: 'temps',
+    subcategory: 'division-du-temps',
+    image: "/images/Le temps et la météo/LA DIVISION DU TEMPS/mars.jpeg",
+    alt: 'Mars',
+    prompt: 'Quel mois est-ce ?',
+    correctAnswer: 'Mars',
+    options: ['Mars', 'Avril', 'Mai', 'Février']
+  },
+  {
+    id: 'division-temps-avril',
+    category: 'temps',
+    subcategory: 'division-du-temps',
+    image: "/images/Le temps et la météo/LA DIVISION DU TEMPS/avril.jpeg",
+    alt: 'Avril',
+    prompt: 'Quel mois est-ce ?',
+    correctAnswer: 'Avril',
+    options: ['Avril', 'Mars', 'Mai', 'Juin']
+  },
+  {
+    id: 'division-temps-mai',
+    category: 'temps',
+    subcategory: 'division-du-temps',
+    image: "/images/Le temps et la météo/LA DIVISION DU TEMPS/mai.jpeg",
+    alt: 'Mai',
+    prompt: 'Quel mois est-ce ?',
+    correctAnswer: 'Mai',
+    options: ['Mai', 'Juin', 'Avril', 'Mars']
+  },
+  {
+    id: 'division-temps-juin',
+    category: 'temps',
+    subcategory: 'division-du-temps',
+    image: "/images/Le temps et la météo/LA DIVISION DU TEMPS/juin.jpeg",
+    alt: 'Juin',
+    prompt: 'Quel mois est-ce ?',
+    correctAnswer: 'Juin',
+    options: ['Juin', 'Juillet', 'Mai', 'Août']
+  },
+  {
+    id: 'division-temps-juillet',
+    category: 'temps',
+    subcategory: 'division-du-temps',
+    image: "/images/Le temps et la météo/LA DIVISION DU TEMPS/juillet.jpeg",
+    alt: 'Juillet',
+    prompt: 'Quel mois est-ce ?',
+    correctAnswer: 'Juillet',
+    options: ['Juillet', 'Juin', 'Août', 'Septembre']
+  },
+  {
+    id: 'division-temps-aout',
+    category: 'temps',
+    subcategory: 'division-du-temps',
+    image: "/images/Le temps et la météo/LA DIVISION DU TEMPS/aout.jpeg",
+    alt: 'Août',
+    prompt: 'Quel mois est-ce ?',
+    correctAnswer: 'Août',
+    options: ['Août', 'Juillet', 'Septembre', 'Octobre']
+  },
+  {
+    id: 'division-temps-septembre',
+    category: 'temps',
+    subcategory: 'division-du-temps',
+    image: "/images/Le temps et la météo/LA DIVISION DU TEMPS/septembre.jpeg",
+    alt: 'Septembre',
+    prompt: 'Quel mois est-ce ?',
+    correctAnswer: 'Septembre',
+    options: ['Septembre', 'Octobre', 'Août', 'Novembre']
+  },
+  {
+    id: 'division-temps-octobre',
+    category: 'temps',
+    subcategory: 'division-du-temps',
+    image: "/images/Le temps et la météo/LA DIVISION DU TEMPS/octobre.jpeg",
+    alt: 'Octobre',
+    prompt: 'Quel mois est-ce ?',
+    correctAnswer: 'Octobre',
+    options: ['Octobre', 'Novembre', 'Septembre', 'Décembre']
+  },
+  {
+    id: 'division-temps-novembre',
+    category: 'temps',
+    subcategory: 'division-du-temps',
+    image: "/images/Le temps et la météo/LA DIVISION DU TEMPS/novembre.jpeg",
+    alt: 'Novembre',
+    prompt: 'Quel mois est-ce ?',
+    correctAnswer: 'Novembre',
+    options: ['Novembre', 'Décembre', 'Octobre', 'Janvier']
+  },
+  {
+    id: 'division-temps-decembre',
+    category: 'temps',
+    subcategory: 'division-du-temps',
+    image: "/images/Le temps et la météo/LA DIVISION DU TEMPS/decembre.jpeg",
+    alt: 'Décembre',
+    prompt: 'Quel mois est-ce ?',
+    correctAnswer: 'Décembre',
+    options: ['Décembre', 'Janvier', 'Novembre', 'Février']
+  },
+
+  // Jours de la semaine
+  {
+    id: 'division-temps-lundi',
+    category: 'temps',
+    subcategory: 'division-du-temps',
+    image: "/images/Le temps et la météo/LA DIVISION DU TEMPS/lundi.jpeg",
+    alt: 'Lundi',
+    prompt: 'Quel jour de la semaine est-ce ?',
+    correctAnswer: 'Lundi',
+    options: ['Lundi', 'Mardi', 'Jeudi', 'Vendredi']
+  },
+  {
+    id: 'division-temps-mardi',
+    category: 'temps',
+    subcategory: 'division-du-temps',
+    image: "/images/Le temps et la météo/LA DIVISION DU TEMPS/mardi.jpeg",
+    alt: 'Mardi',
+    prompt: 'Quel jour de la semaine est-ce ?',
+    correctAnswer: 'Mardi',
+    options: ['Mardi', 'Mercredi', 'Lundi', 'Jeudi']
+  },
+  {
+    id: 'division-temps-mercredi',
+    category: 'temps',
+    subcategory: 'division-du-temps',
+    image: "/images/Le temps et la météo/LA DIVISION DU TEMPS/mercredi.jpeg",
+    alt: 'Mercredi',
+    prompt: 'Quel jour de la semaine est-ce ?',
+    correctAnswer: 'Mercredi',
+    options: ['Mercredi', 'Mardi', 'Jeudi', 'Vendredi']
+  },
+  {
+    id: 'division-temps-jeudi',
+    category: 'temps',
+    subcategory: 'division-du-temps',
+    image: "/images/Le temps et la météo/LA DIVISION DU TEMPS/jeudi.jpeg",
+    alt: 'Jeudi',
+    prompt: 'Quel jour de la semaine est-ce ?',
+    correctAnswer: 'Jeudi',
+    options: ['Jeudi', 'Vendredi', 'Mardi', 'Samedi']
+  },
+  {
+    id: 'division-temps-vendredi',
+    category: 'temps',
+    subcategory: 'division-du-temps',
+    image: "/images/Le temps et la météo/LA DIVISION DU TEMPS/vendredi.jpeg",
+    alt: 'Vendredi',
+    prompt: 'Quel jour de la semaine est-ce ?',
+    correctAnswer: 'Vendredi',
+    options: ['Vendredi', 'Jeudi', 'Samedi', 'Dimanche']
+  },
+  {
+    id: 'division-temps-samedi',
+    category: 'temps',
+    subcategory: 'division-du-temps',
+    image: "/images/Le temps et la météo/LA DIVISION DU TEMPS/samedi.jpeg",
+    alt: 'Samedi',
+    prompt: 'Quel jour de la semaine est-ce ?',
+    correctAnswer: 'Samedi',
+    options: ['Samedi', 'Dimanche', 'Vendredi', 'Lundi']
+  },
+  {
+    id: 'division-temps-dimanche',
+    category: 'temps',
+    subcategory: 'division-du-temps',
+    image: "/images/Le temps et la météo/LA DIVISION DU TEMPS/dimanche.jpeg",
+    alt: 'Dimanche',
+    prompt: 'Quel jour de la semaine est-ce ?',
+    correctAnswer: 'Dimanche',
+    options: ['Dimanche', 'Samedi', 'Lundi', 'Vendredi']
+  },
 ]

@@ -1141,7 +1141,7 @@ h1 em, h2 em {
   min-height: 42px;
 }
 
-.answer:hover:not(.right):not(.wrong) {
+.answer:hover:not(.right):not(.wrong):not(.selected) {
   border-color: var(--fr-bleu-royal);
   background: var(--fr-bleu-subtle);
   transform: translateY(-1px);
@@ -1187,6 +1187,73 @@ h1 em, h2 em {
 
 .feedback.good { color: var(--success); }
 .feedback.bad { color: var(--error); }
+
+.feedback-explanation {
+  margin-top: 8px;
+  font-size: 0.84rem;
+  font-weight: 500;
+  line-height: 1.45;
+  color: var(--text-dark);
+  background: rgba(42, 82, 152, 0.07);
+  border-left: 3.5px solid var(--fr-bleu);
+  border-radius: 8px;
+  padding: 8px 12px;
+  text-align: left;
+  white-space: pre-line;
+}
+
+.answer.selected {
+  border-color: var(--fr-bleu-royal);
+  background: var(--fr-bleu-subtle);
+  color: var(--fr-bleu-royal);
+  box-shadow: 0 0 0 2px rgba(42, 82, 152, 0.18);
+}
+
+.answer.selected strong {
+  color: var(--fr-bleu-royal);
+}
+
+
+.multi-notice {
+  text-align: center;
+  font-size: 0.78rem;
+  color: #b45309;
+  background: #fef3c7;
+  border: 1px solid #fcd34d;
+  border-radius: 10px;
+  padding: 8px 14px;
+  margin-bottom: 4px;
+  line-height: 1.4;
+}
+
+.multi-notice strong {
+  font-weight: 700;
+}
+
+.validate-btn {
+  display: block;
+  width: 100%;
+  margin-top: 8px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 13px;
+  background: var(--fr-bleu-royal);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: 0.15s ease;
+}
+
+.validate-btn:hover:not(:disabled) {
+  background: var(--fr-bleu);
+  transform: translateY(-1px);
+}
+
+.validate-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
 
 /* ═════════════════════════════════════════════════════════════════════════
    HOME SCREEN: Game Selection
